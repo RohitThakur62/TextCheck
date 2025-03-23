@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    #divq{
+        border: 3px solid red;
+        background-color: aqua;
+    }
+
+    #myinput{
+        text-align: center;
+        margin-left: 50%;
+    }
+    .output{
+        margin-left: 100px;
+    }
+</style>
+<body>
+    <div id="divq">
+        <input type="text" id="myinput" placeholder="type">
+
+        <div class="output">
+            <p class="keypress">keypressed:</p>
+            <p class="keycode">keycode:</p>
+            <p class="charCode">CharCode:</p>
+            <p class="eventType">EventType:</p>
+
+        </div>
+    </div>
+    <script>
+
+
+        const key=(event)=>{
+
+            document.querySelector(".keypress").textContent=`keypress ${event.key}`;
+            document.querySelector(".keycode").textContent=` keycode:${event.code}`;
+
+            document.querySelector(".charCode").textContent=` Charcode:${event.key.charCodeAt(0)}`;
+            document.querySelector(".eventType").textContent=` EventType:${event.type}`;
+
+        }
+        let x=document.querySelector("#myinput");
+        x.addEventListener("keydown",key);
+    </script>
+</body>
+</html>
